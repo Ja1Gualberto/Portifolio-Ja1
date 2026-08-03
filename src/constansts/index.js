@@ -251,9 +251,9 @@ export const calculateSizes = (isSmall, isMobile, isTablet) => {
     deskScale: isSmall ? 0.05 : isMobile ? 0.06 : isTablet ? 0.065 : 0.09,
     deskPosition: isMobile ? [0.5, -4.5, 0] : [0.25, -5.5, 0],
     cubePosition: isSmall ? [4, -5, 0] : isMobile ? [5, -5, 0] : isTablet ? [5, -5, 0] : [9, -5.5, 0],
-    reactLogoPosition: isSmall ? [6, 4, 0] : isMobile ? [8, 4, 0] : isTablet ? [9, 4, 0] : [12, 3, 0],
-    ringPosition: isSmall ? [-5, 7, 0] : isMobile ? [-10, 10, 0] : isTablet ? [-12, 10, 0] : [-24, 10, 0],
-    targetPosition: isSmall ? [-8, -10, -10] : isMobile ? [-13, -10, -10] : isTablet ? [-12, -7, -10] : [-18, -13, -10],
+    reactLogoPosition: isSmall ? [7.2, 4, 0] : isMobile ? [8, 2., 0] : isTablet ? [9, 8, 0] : [15, 3, 0],
+    targetPosition: isSmall ? [-7.5, 7, 0] : isMobile ? [-10, 9, 0] : isTablet ? [-10, 10, 0] : [-17, 10, 0],
+    laravelPosition: isSmall ? [-7.5, -10, -10] : isMobile ? [-9.5, -10, -10] : isTablet ? [-12, -7, -10] : [-15, -13, -10],
     laravelLogoScale: isSmall ? 3 : isMobile ? 4 : isTablet ? 5 : 7,
   };
 };

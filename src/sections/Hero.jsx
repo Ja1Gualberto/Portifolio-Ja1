@@ -8,6 +8,7 @@ import { useMediaQuery } from "react-responsive";
 import { calculateSizes } from "../constansts";
 import LaravelLogo from "../components/LaravelLogo.jsx";
 import ReactLogo from "../components/ReactLogo.jsx";
+import Target from "../components/Target.jsx";
 
 const Hero = () => {
   const controls = useControls('HackerRoom', {
@@ -52,8 +53,9 @@ const Hero = () => {
             />
             
             <group>
-              <LaravelLogo position={tamanhos.targetPosition} scale={tamanhos.laravelLogoScale}/>
+              <LaravelLogo position={tamanhos.laravelPosition} scale={tamanhos.laravelLogoScale}/>
               <ReactLogo position={tamanhos.reactLogoPosition} scale={tamanhos.deskScale}/>
+              <Target position={tamanhos.targetPosition} />
             </group>
             
             <ambientLight intensity={1} />
