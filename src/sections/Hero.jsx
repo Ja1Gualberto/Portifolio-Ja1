@@ -3,25 +3,26 @@ import { Canvas } from "@react-three/fiber";
 import HackerRoom from "../components/HackerRoom";
 import { Suspense } from "react";
 import CanvasLoader from "../components/CanvasLoader";
-import { Leva, useControls } from "leva";
+// import { Leva, useControls } from "leva";
 import { useMediaQuery } from "react-responsive";
 import { calculateSizes } from "../constansts";
 import LaravelLogo from "../components/LaravelLogo.jsx";
 import ReactLogo from "../components/ReactLogo.jsx";
 import Target from "../components/Target.jsx";
 import Cubo from "../components/Cubo.jsx";
+import HeroCamera from "../components/HeroCamera.jsx";
 
 const Hero = () => {
-  const controls = useControls('HackerRoom', {
-      positionX: { value: 0, min: -10, max: 10 },
-      positionY: { value: 0, min: -10, max: 10 },
-      positionZ: { value: 0, min: -10, max: 10 },
-      rotationX: { value: 0, min: -10, max: 10 },
-      rotationY: { value: 0, min: -10, max: 10 },
-      rotationZ: { value: 0, min: -10, max: 10 },
-      scale: { value: 0.07, min: 0.01, max: 0.5 },
-    }
-  );
+  // const controls = useControls('HackerRoom', {
+  //     positionX: { value: 0, min: -10, max: 10 },
+  //     positionY: { value: 0, min: -10, max: 10 },
+  //     positionZ: { value: 0, min: -10, max: 10 },
+  //     rotationX: { value: 0, min: -10, max: 10 },
+  //     rotationY: { value: 0, min: -10, max: 10 },
+  //     rotationZ: { value: 0, min: -10, max: 10 },
+  //     scale: { value: 0.07, min: 0.01, max: 0.5 },
+  //   }
+  // );
   const isSmall = useMediaQuery({maxWidth: 440});
   const isMobile = useMediaQuery({maxWidth: 768});
   const isTablet = useMediaQuery({minWidth: 768, maxWidth: 1024});
@@ -37,21 +38,25 @@ const Hero = () => {
       
       
       <div className="w-full h-full absolute inset-0">
-        <Leva  />
+        {/* <Leva  /> */}
         <Canvas className="w-full h-full">
           
           <Suspense fallback={<CanvasLoader/>}>
             
             <PerspectiveCamera makeDefault position={[0,0,30]}/>
-            <HackerRoom
-              // scale={tamanhos.deskScale}
-              // position={tamanhos.deskPosition} 
-              // rotation={[0.1, -Math.PI, 0]}
-              
-              position={[controls.positionX, controls.positionY, controls.positionZ]}
-              rotation={[controls.rotationX, controls.rotationY, controls.rotationZ]}
-              scale={controls.scale}
-            />
+            
+            <HeroCamera isMobile={isMobile}>
+              <HackerRoom
+                scale={tamanhos.deskScale}
+                position={tamanhos.deskPosition} 
+                rotation={[0.1, -Math.PI, 0]}
+                
+                // position={[controls.positionX, controls.positionY, controls.positionZ]}
+                // rotation={[controls.rotationX, controls.rotationY, controls.rotationZ]}
+                // scale={controls.scale}
+              />
+            </HeroCamera>
+            
             
             <group>
               <LaravelLogo position={tamanhos.laravelPosition} scale={tamanhos.laravelLogoScale}/>
