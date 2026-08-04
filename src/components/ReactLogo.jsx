@@ -8,18 +8,28 @@ Title: React logo
 
 import React, { useRef } from 'react'
 import { Float, useGLTF } from '@react-three/drei'
+import { useFrame } from '@react-three/fiber'
 
 const ReactLogo = (props) => {
   const { nodes, materials } = useGLTF('/public/models/react.glb')
+  const meshRef = useRef()
+
+  useFrame((_, delta) => {
+    if (meshRef.current) {
+      meshRef.current.rotation.y += delta * 0.75
+      meshRef.current.rotation.x += delta * 1
+    }
+  })
+
   return (
-    <Float>
+    <Float floatIntensity={1}>
       <group {...props} dispose={null}>
         <mesh
+          ref={meshRef}
           castShadow
           receiveShadow
           geometry={nodes['React-Logo_Material002_0'].geometry}
           material={materials['Material.002']}
-          // position={[0, 7.9355, 18.101]}
           position={[0, 0.079355, 0.181016]}
           rotation={[0, 0, -Math.PI / 2]}
           scale={[3.9166, 3.9166, 6.2734]}

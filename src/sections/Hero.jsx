@@ -9,6 +9,7 @@ import { calculateSizes } from "../constansts";
 import LaravelLogo from "../components/LaravelLogo.jsx";
 import ReactLogo from "../components/ReactLogo.jsx";
 import Target from "../components/Target.jsx";
+import Cubo from "../components/Cubo.jsx";
 
 const Hero = () => {
   const controls = useControls('HackerRoom', {
@@ -43,19 +44,20 @@ const Hero = () => {
             
             <PerspectiveCamera makeDefault position={[0,0,30]}/>
             <HackerRoom
-              scale={tamanhos.deskScale}
-              position={tamanhos.deskPosition} 
-              rotation={[0.1, -Math.PI, 0]}
+              // scale={tamanhos.deskScale}
+              // position={tamanhos.deskPosition} 
+              // rotation={[0.1, -Math.PI, 0]}
               
-              // position={[controls.positionX, controls.positionY, controls.positionZ]}
-              // rotation={[controls.rotationX, controls.rotationY, controls.rotationZ]}
-              // scale={controls.scale}
+              position={[controls.positionX, controls.positionY, controls.positionZ]}
+              rotation={[controls.rotationX, controls.rotationY, controls.rotationZ]}
+              scale={controls.scale}
             />
             
             <group>
               <LaravelLogo position={tamanhos.laravelPosition} scale={tamanhos.laravelLogoScale}/>
               <ReactLogo position={tamanhos.reactLogoPosition} scale={tamanhos.deskScale}/>
-              <Target position={tamanhos.targetPosition} />
+              <Target position={tamanhos.targetPosition} scale={tamanhos.targetScale}/>
+              <Cubo position={tamanhos.cubePosition} scale={tamanhos.cubeScale}/>
             </group>
             
             <ambientLight intensity={1} />

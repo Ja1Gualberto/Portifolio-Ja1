@@ -10,7 +10,7 @@ const HackerRoom = (props) => {
   const { nodes, materials } = useGLTF('/public/models/hacker-room.glb');
 
   const monitortxt = useTexture('textures/desk/monitor.png');
-  const screenTxt = useTexture('textures/desk/screen.png');
+  const screenTxt = useTexture('textures/desk/teste.png');
 
   return (
     <group {...props} dispose={null}>

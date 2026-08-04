@@ -18,7 +18,7 @@ const Target = (props) => {
   useGSAP( () => {
     gsap.to(targetRef.current.position, {
       y: targetRef.current.position.y + 0.5,
-      duration: 1.5,
+      duration: 1.25,
       repeat: -1,
       yoyo: true
     })
@@ -31,7 +31,7 @@ const Target = (props) => {
         <group
           position={[7.224, 0, 0]}
           rotation={[-Math.PI / 2, 0, 5]}
-          scale={125}
+          scale={25}
         >
           <mesh
             castShadow

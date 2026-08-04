@@ -12,7 +12,7 @@ import { Float, useGLTF } from '@react-three/drei'
 const LaravelLogo = (props) => {
   const { nodes, materials } = useGLTF('/models/laravel.glb')
   return (
-    <Float dispose={null}>
+    <Float dispose={null} floatIntensity={1} floatingRange={0.5}>
       <group {...props}>
         {/* <mesh
           castShadow
