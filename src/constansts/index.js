@@ -248,16 +248,19 @@ export const myProjects = [
 
 export const calculateSizes = (isSmall, isMobile, isTablet) => {
   return {
-    deskScale: isSmall ? 0.05 : isMobile ? 0.06 : isTablet ? 0.065 : 0.09,
+    deskScale: isSmall ? 0.065 : isMobile ? 0.06 : isTablet ? 0.09 : 0.09,
     deskPosition: isMobile ? [0.5, -4.5, 0] : [0.25, -5.5, 0],
-    cubePosition: isSmall ? [5.5, -5, 0] : isMobile ? [7, -6.5, 0] : isTablet ? [8, -5, 0] : [12, -8.5, 0],
-    reactLogoPosition: isSmall ? [5.5, 4, 0] : isMobile ? [8, 3., 0] : isTablet ? [9, 7, 0] : [15, 5, 0],
-    targetPosition: isSmall ? [-5.5, 5, 0] : isMobile ? [-10, 9, 0] : isTablet ? [-9.5, 10, 0] : [-16.5, 9, 0],
-    laravelPosition: isSmall ? [-7, -10, -10] : isMobile ? [-9.5, -10, -10] : isTablet ? [-12, -7, -10] : [-15, -13, -10],
 
+    reactLogoPosition: isSmall ? [5.5, 4, 0] : isMobile ? [8, 3., 0] : isTablet ? [10, 7, 0] : [15, 5, 0],
+
+    laravelPosition: isSmall ? [-7, -10, -10] : isMobile ? [-9.5, -10, -10] : isTablet ? [-12, -7, -10] : [-15, -13, -10],
     laravelLogoScale: isSmall ? 4 : isMobile ? 5 : isTablet ? 5 : 7,
+
+    targetPosition: isSmall ? [-5.5, 5, 0] : isMobile ? [-8.5, 5, 0] : isTablet ? [-10, 7, 0] : [-16.5, 7, 0],
     targetScale: isSmall ? 4 : isMobile ? 4 : isTablet ? 5 : 6.5,
-    cubeScale: isSmall ? 0.7 : isMobile ? 1 : isTablet ? 0.9 : 1.3,
+
+    cubePosition: isSmall ? [5.5, -5, 0] : isMobile ? [7, -6.5, 0] : isTablet ? [8, -5, 0] : [12, -8.5, 0],
+    cubeScale: isSmall ? 0.7 : isMobile ? 0.9 : isTablet ? 0.9 : 1.3,
   };
 };
 

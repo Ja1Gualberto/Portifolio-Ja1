@@ -3,7 +3,6 @@ import { Canvas } from "@react-three/fiber";
 import HackerRoom from "../components/HackerRoom";
 import { Suspense } from "react";
 import CanvasLoader from "../components/CanvasLoader";
-// import { Leva, useControls } from "leva";
 import { useMediaQuery } from "react-responsive";
 import { calculateSizes } from "../constansts";
 import LaravelLogo from "../components/LaravelLogo.jsx";
@@ -11,18 +10,9 @@ import ReactLogo from "../components/ReactLogo.jsx";
 import Target from "../components/Target.jsx";
 import Cubo from "../components/Cubo.jsx";
 import HeroCamera from "../components/HeroCamera.jsx";
+import Button from "../components/Button.jsx";
 
 const Hero = () => {
-  // const controls = useControls('HackerRoom', {
-  //     positionX: { value: 0, min: -10, max: 10 },
-  //     positionY: { value: 0, min: -10, max: 10 },
-  //     positionZ: { value: 0, min: -10, max: 10 },
-  //     rotationX: { value: 0, min: -10, max: 10 },
-  //     rotationY: { value: 0, min: -10, max: 10 },
-  //     rotationZ: { value: 0, min: -10, max: 10 },
-  //     scale: { value: 0.07, min: 0.01, max: 0.5 },
-  //   }
-  // );
   const isSmall = useMediaQuery({maxWidth: 440});
   const isMobile = useMediaQuery({maxWidth: 768});
   const isTablet = useMediaQuery({minWidth: 768, maxWidth: 1024});
@@ -38,7 +28,6 @@ const Hero = () => {
       
       
       <div className="w-full h-full absolute inset-0">
-        {/* <Leva  /> */}
         <Canvas className="w-full h-full">
           
           <Suspense fallback={<CanvasLoader/>}>
@@ -50,10 +39,6 @@ const Hero = () => {
                 scale={tamanhos.deskScale}
                 position={tamanhos.deskPosition} 
                 rotation={[0.1, -Math.PI, 0]}
-                
-                // position={[controls.positionX, controls.positionY, controls.positionZ]}
-                // rotation={[controls.rotationX, controls.rotationY, controls.rotationZ]}
-                // scale={controls.scale}
               />
             </HeroCamera>
             
@@ -70,6 +55,11 @@ const Hero = () => {
           </Suspense>
           
         </Canvas>
+      </div>
+      <div className="absolute bottom-7 left-0 right-0 w-full z-10 c-space">
+        <a href="#contact" className="w-fit">
+          <Button name="Let's work together" isBeam containerClass="sm:w-fit w-full sm:min-w-96" />
+        </a>
       </div>
     </section>
   ); 
