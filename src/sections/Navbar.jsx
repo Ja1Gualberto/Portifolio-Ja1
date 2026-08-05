@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { navLinks } from "../constansts";
+import Switch from "../components/Switch";
 
 const NavItems = () => {
   return (
@@ -30,6 +31,7 @@ const Navbar = () => {
           
           <nav className="sm:flex hidden">
             <NavItems/>
+            <Switch/>
           </nav>
         </div>
       </div>
