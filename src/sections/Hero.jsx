@@ -45,7 +45,7 @@ const Hero = () => {
             
             <group>
               <LaravelLogo position={tamanhos.laravelPosition} scale={tamanhos.laravelLogoScale}/>
-              <ReactLogo position={tamanhos.reactLogoPosition} scale={tamanhos.deskScale}/>
+              <ReactLogo position={tamanhos.reactLogoPosition} scale={tamanhos.reactLogoScale}/>
               <Target position={tamanhos.targetPosition} scale={tamanhos.targetScale}/>
               <Cubo position={tamanhos.cubePosition} scale={tamanhos.cubeScale}/>
             </group>
@@ -56,7 +56,7 @@ const Hero = () => {
           
         </Canvas>
       </div>
-      <div className="absolute bottom-7 left-0 right-0 w-full z-10 c-space">
+      <div className="absolute bottom-7 left-1/2 -translate-x-1/2 w-fit z-10 c-space">
         <a href="#contact" className="w-fit">
           <Button name="Let's work together" isBeam containerClass="sm:w-fit w-full sm:min-w-96" />
         </a>

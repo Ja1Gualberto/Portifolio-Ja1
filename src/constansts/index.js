@@ -252,6 +252,7 @@ export const calculateSizes = (isSmall, isMobile, isTablet) => {
     deskPosition: isMobile ? [0.5, -4.5, 0] : [0.25, -5.5, 0],
 
     reactLogoPosition: isSmall ? [5.5, 4, 0] : isMobile ? [8, 3., 0] : isTablet ? [10, 7, 0] : [15, 5, 0],
+    reactLogoScale: isSmall ? 0.04 : isMobile ? 0.07 : isTablet ? 0.08 : 0.1,
 
     laravelPosition: isSmall ? [-7, -10, -10] : isMobile ? [-9.5, -10, -10] : isTablet ? [-12, -7, -10] : [-15, -13, -10],
     laravelLogoScale: isSmall ? 4 : isMobile ? 5 : isTablet ? 5 : 7,
