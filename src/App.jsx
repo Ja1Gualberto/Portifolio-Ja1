@@ -5,7 +5,7 @@ import AboutMe from "./sections/AboutMe";
 
 const App = () => {
   return (
-    <main className="max-w-7x1 mx-auto">
+    <main className="max-w-7xl mx-auto">
       <Navbar/>
       <Hero />
       <AboutMe/>
