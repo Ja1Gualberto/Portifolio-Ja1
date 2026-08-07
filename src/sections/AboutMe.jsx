@@ -1,4 +1,6 @@
+import Globe from "react-globe.gl";
 import Button from "../components/Button";
+import GlobeLight from "../components/GlobewLight";
 
 const AboutMe = () => {
   return (
@@ -9,8 +11,8 @@ const AboutMe = () => {
           About Me
         </p>
       </div>
-      <div className="grid xl:grid-cols-3 xl:grid-rows-1 md:grid-cols-2 grid-cols-1 gap-5">
-      {/* <div className="grid xl:grid-cols-3 xl:grid-rows-6 md:grid-cols-2 grid-cols-1 gap-5 h-full"> */}
+      <div className="grid xl:grid-cols-3 xl:grid-rows-6 md:grid-cols-2 grid-cols-1 gap-5 h-full">
+      {/* <div className="grid xl:grid-cols-3 xl:grid-rows-1 md:grid-cols-2 grid-cols-1 gap-5"> */}
         <div className="col-span-1 xl:row-span-3">
           <div className="grid-container">
             <img src="/assets/AvatarIcon.png" alt="avatarIcon" className="w-full sm:h-[276px] h-fit object-contain"/>
@@ -18,7 +20,7 @@ const AboutMe = () => {
             <div className="">
               <p className="grid-headtext">Hi, I'm João</p>
               <p className="grid-subtext">
-                With practical experience in web development, I have honed my skills in both frontend and backend dev, creating dynamic and responsive systems. I currently apply my knowledge in technologies like PHP (Laravel), JavaScript, and MySQL to build efficient solutions.
+                As an experienced full-stack web developer, I build dynamic, responsive, and efficient solutions using PHP (Laravel), React, and MySQL.
               </p>
             </div>
           </div>
@@ -26,27 +28,39 @@ const AboutMe = () => {
         
         <div className="col-span-1 xl:row-span-3">
           <div className="grid-container">
-              <img src="/assets/grid2.png" alt="stacks" className="w-full sm:h-[276px] h-fit object-contain"/>
+              <img src="/assets/stackLogo.png" alt="stacks" className="w-full sm:h-[276px] h-fit object-contain"/>
             
             <div className="flex flex-col flex-1">
               <p className="grid-headtext">Stacks</p>
               <p className="grid-subtext">
-                I specialize in a variety of languages, frameworks, and tools that allow me to build robust and scalable applications. My technical stack includes backend development with Laravel, CodeIgniter and MySQL, combined with frontend technologies like HTML5, CSS3, JavaScript, React, and Bootstrap. Furthermore, I have knowledge of C and C++, and I utilize Git, Linux, and Windows to manage my development environment effectively.
+                I'm specialized in Full Stack Developer focused on PHP/Laravel and JavaScript/React. I build end-to-end applications using Tailwind for interfaces and Docker with MySQL for infrastructure.
               </p>
             </div>
           </div>
         </div>
         
-        <div className="col-span-1 xl:row-span-4">
+        <div className="col-span-1 xl:row-span-4 ">
           <div className="grid-container">
-            <div className="rounded-3xl w-full sm:h-[326px] h-fit flex justify-center items-center">
-              
-              
+            {/* <div className="rounded-3xl w-full sm:h-[326px] h-fit flex justify-center items-center"> */}
+            <div className="rounded-3xl w-full h-fit flex justify-center items-center mb-0">
+              {/* <GlobeLight/> */}
+              <Globe
+                height={400}
+                width={400}
+                backgroundColor="rgba(0, 0, 0, 0)"
+                backgroundImageOpacity={0.5}
+                showAtmosphere
+                showGraticules
+                globeImageUrl="//cdn.jsdelivr.net/npm/three-globe/example/img/earth-blue-marble.jpg"
+                // bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
+                labelsData={[{ lat: -8.7496958, lng: -63.8765206, text: 'Rondonia, Brasil', color: 'white', size: 10000 }]}
+              />
             </div>
             
             <div>
-              <p className="grid-headtext">I’m very flexible with time zone communications & locations</p>
+              <p className="grid-headtext">I work remotely across most timezones.</p>
               <p className="grid-subtext">I&apos;m based in Rondonia, Brasil and open to remote work worldwide</p>
+              <Button name="Contact Me" isBeam containerClass="w-full mt-10" />
             </div>
           </div>
         </div>
@@ -58,8 +72,6 @@ const AboutMe = () => {
             <div>
               <p className="grid-headtext">teste</p>
               <p className="grid-subtext">testesub</p>
-              <Button name="Contact Me" isBeam containerClass="w-full mt-10" />
-              
             </div>
           </div>
         </div>
