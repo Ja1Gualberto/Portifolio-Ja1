@@ -1,8 +1,20 @@
+import { useState } from 'react';
 import Globe from "react-globe.gl";
 import Button from "../components/Button";
 import GlobeLight from "../components/GlobewLight";
 
 const AboutMe = () => {
+  const [hasCopied, setHasCopied] = useState(false);
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(' jguberto@gmail.com');
+    setHasCopied(true);
+    
+    setTimeout(() => {
+      setHasCopied(false);
+    }, 2000);
+  };
+  
   return (
     // <section className="right-0 left-0 w-full ">
     <section className="c-space my-20" id="about">
@@ -70,19 +82,23 @@ const AboutMe = () => {
             <img src="/assets/grid3.png" alt="" className="w-full sm:h-[266px] h-fit object-contain" />
             
             <div>
-              <p className="grid-headtext">teste</p>
-              <p className="grid-subtext">testesub</p>
+              <p className="grid-headtext">My Passion for Coding</p>
+              <p className="grid-subtext">I love solving problems and building things through code. Programming isn't just my profession—it's my passion. I enjoy exploring new technologies, and enhancing my skills.</p>
             </div>
           </div>
         </div>
         
         <div className="xl:col-span-1 xl:row-span-2">
           <div className="grid-container">
-            <img src="/assets/grid4.png" alt="grid-4" className="w-full md:h-[126px] sm:h-[276px] h-fit object-cover sm:object-top"/>
+            <img 
+              src="/assets/grid4.png"
+              alt="grid-4"
+              className="w-full md:h-[126px] sm:h-[276px] h-fit object-cover sm:object-top"
+            />
             
             <div className="space-y-2">
               <p className="grid-subtext text-center">Contact Me</p>
-              <div className="copy-container" >
+              <div className="copy-container" onClick={handleCopy}>
                 <p className="lg:text-2xl md:text-xl font-medium text-gray_gradient text-white">jguberto@gmail.com</p>
               </div>
             </div>
