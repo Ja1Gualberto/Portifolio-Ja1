@@ -2,8 +2,8 @@ import { Suspense, useState } from "react";
 import { myProjects } from "../constansts";
 import { Canvas } from "@react-three/fiber";
 import { Center } from "@react-three/drei";
-import { Group, Mesh } from "three";
 import CanvasLoader from "../components/CanvasLoader";
+import DemoComputer from "../components/DemoComputer";
 
 const Projects = () => {
   
@@ -74,9 +74,9 @@ const Projects = () => {
                 
               <Center>
                 <Suspense fallback={<CanvasLoader />}>
-                  <Group scale={2} position={[0,-3,0]} rotation={[0,-0.1,0]}>
-                    
-                  </Group>
+                  <group scale={0.9} position={[0,0,0]} rotation={[0,0,0]}>
+                    <DemoComputer texture={projectSelect.texture} />
+                  </group>
                 
                 </Suspense>
               </Center>
