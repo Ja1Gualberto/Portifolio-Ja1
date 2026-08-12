@@ -6,14 +6,80 @@ Source: https://sketchfab.com/3d-models/pc-9801ux-2befdff3817c4b1f86373149f3328e
 Title: PC-9801UX
 */
 
-import React, { useRef } from 'react'
-import { useGLTF } from '@react-three/drei'
+import React, { useEffect, useRef } from 'react'
+import { useGLTF, useVideoTexture } from '@react-three/drei'
+import * as THREE from 'three'
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { useControls } from 'leva';
 
 const DemoComputer = (props) => {
-  const { nodes, materials } = useGLTF('/models/pc-projects.glb')
+  const group = useRef();
+  const { nodes, materials } = useGLTF('models/pc-projects.glb');
+  
+  const txt = useVideoTexture(props.texture || '/textures/project/SGES.mp4');
+
+  // -------------------------------------------------------
+  // Normaliza os UVs da geometria da tela para [0, 1].
+  // Isso elimina o efeito de zoom causado por UVs fora do
+  // intervalo padrão gerados pelo modelo 3D.
+  // -------------------------------------------------------
+  useEffect(() => {
+    const geo = nodes['0']?.geometry;
+    if (!geo || !geo.attributes.uv) return;
+
+    const uvAttr = geo.attributes.uv;
+    let minU = Infinity, maxU = -Infinity;
+    let minV = Infinity, maxV = -Infinity;
+
+    for (let i = 0; i < uvAttr.count; i++) {
+      const u = uvAttr.getX(i);
+      const v = uvAttr.getY(i);
+      if (u < minU) minU = u;
+      if (u > maxU) maxU = u;
+      if (v < minV) minV = v;
+      if (v > maxV) maxV = v;
+    }
+
+    const rangeU = maxU - minU || 1;
+    const rangeV = maxV - minV || 1;
+
+    for (let i = 0; i < uvAttr.count; i++) {
+      uvAttr.setX(i, (uvAttr.getX(i) - minU) / rangeU);
+      uvAttr.setY(i, (uvAttr.getY(i) - minV) / rangeV);
+    }
+    uvAttr.needsUpdate = true;
+  }, [nodes]);
+
+  // Aplica rotação na textura (necessário pela orientação do modelo)
+  useEffect(() => {
+    if (!txt) return;
+    txt.wrapS = THREE.ClampToEdgeWrapping;
+    txt.wrapT = THREE.ClampToEdgeWrapping;
+    txt.center.set(0.5, 0.5);
+    txt.rotation = -Math.PI / 2;
+    txt.repeat.set(1, 1);
+    txt.offset.set(0, 0);
+    // Melhora a nitidez da textura de vídeo
+    txt.minFilter = THREE.LinearFilter;
+    txt.magFilter = THREE.LinearFilter;
+    txt.generateMipmaps = false;
+    txt.anisotropy = 16;
+    txt.needsUpdate = true;
+  }, [txt]);
+  
+  useGSAP(() => {
+    gsap.from(group.current.rotation, {
+      y: Math.PI / 2,
+      duration: 1,
+      ease: 'power3.out',
+    });
+  }, [txt]);
+  
   return (
-    <group {...props} dispose={null}>
+    <group ref={group} {...props} dispose={null}>
       <group
+        name='Pc-disquete1'
         position={[35.38, 21.57, -6.869]}
         rotation={[-Math.PI / 2, 0, 0]}
         scale={[100, 100, 98]}>
@@ -43,6 +109,7 @@ const DemoComputer = (props) => {
         />
       </group>
       <group
+        name='Pc-disquete2'
         position={[35.38, 15.236, -6.869]}
         rotation={[-Math.PI / 2, 0, 0]}
         scale={[100, 100, 98]}>
@@ -71,7 +138,10 @@ const DemoComputer = (props) => {
           material={materials['.004']}
         />
       </group>
-      <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group
+        name='CPU'
+        rotation={[-Math.PI / 2, 0, 0]}
+        scale={100}>
         <mesh
           castShadow
           receiveShadow
@@ -85,7 +155,11 @@ const DemoComputer = (props) => {
           material={materials['PC9801UX.001']}
         />
       </group>
-      <group position={[-0.077, 75.996, -33.893]} rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+      <group 
+        name='Monitor'
+        position={[-0.077, 75.996, -33.893]}
+        rotation={[-Math.PI / 2, 0, 0]}
+        scale={100}>
         <mesh
           castShadow
           receiveShadow
@@ -100,6 +174,7 @@ const DemoComputer = (props) => {
         />
       </group>
       <group
+        name='Disquete-Mesa1'
         position={[85.791, 0, 48.96]}
         rotation={[-Math.PI / 2, 0, -0.436]}
         scale={[100, 100, 98]}>
@@ -128,7 +203,8 @@ const DemoComputer = (props) => {
           material={materials['.004']}
         />
       </group>
-      <group
+      {/* <group
+        name='Disquete-Mesa2'
         position={[108.829, 0, 72.691]}
         rotation={[Math.PI / 2, 0, -3.054]}
         scale={[100, 100, 98]}>
@@ -156,7 +232,7 @@ const DemoComputer = (props) => {
           geometry={nodes['FD4_���������������004_0'].geometry}
           material={materials['.004']}
         />
-      </group>
+      </group> */}
       <mesh
         castShadow
         receiveShadow
@@ -170,11 +246,13 @@ const DemoComputer = (props) => {
         castShadow
         receiveShadow
         geometry={nodes['0'].geometry}
-        material={materials.Material}
-        position={[10.349, 86.658, -27.724]}
+        position={[10.3, 86.6, -23]}
+        // position={[10.349, 86.658, -31.777]}
         rotation={[-Math.PI / 2, 0, 0]}
-        scale={100}
-      />
+        scale={[111, 96.4, 104]}
+      >
+        <meshBasicMaterial map={txt}  />
+      </mesh>
       <mesh
         castShadow
         receiveShadow
@@ -187,5 +265,5 @@ const DemoComputer = (props) => {
   )
 }
 
-useGLTF.preload('/models/pc-projects.glb')
+useGLTF.preload('models/pc-projects.glb')
 export default DemoComputer;
