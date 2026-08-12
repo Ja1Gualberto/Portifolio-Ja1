@@ -20,7 +20,7 @@ const Projects = () => {
       
       gsap.to(controlsRef.current.object.position, {
         x:0,
-        y:0,
+        y:1,
         z:5,
         duration: 1.5,
         ease: 'power3.inOut',

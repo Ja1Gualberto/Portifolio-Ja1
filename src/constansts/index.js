@@ -61,7 +61,7 @@ export const myProjects = [
     title: 'SGES - Overtime Management Systems',
     desc: 'SGES is an innovative management system that transforms the way organizations track employee hours. With advanced workflow features like automated approval processes and real-time analytics, it allows administrators to effortlessly manage overtime data from a single platform.',
     subdesc:
-      'Built as a comprehensive management solution with Laravel, BootStrap CSS, and JavaScrip, SGES is designed for optimal reliability and enterprise-level scalability.',
+      'Built as a comprehensive management solution with Laravel, BootStrap CSS, MySQL and JavaScript, SGES is designed for optimal reliability and enterprise-level scalability.',
     href: 'https://www.youtube.com/watch?v=zfAb95tJvZQ',
     texture: '/textures/project/SGES.mp4',
     logo: '/assets/logos/SGES-logo.png',
@@ -75,7 +75,7 @@ export const myProjects = [
       {
         id: 1,
         name: 'React.js',
-        path: '/assets/react.svg',
+        path: '/assets/logos/laravel-logo copy.png',
       },
       {
         id: 2,
@@ -85,12 +85,12 @@ export const myProjects = [
       {
         id: 3,
         name: 'TypeScript',
-        path: '/assets/logos/typescript.png',
+        path: '/assets/logos/js-logo.svg',
       },
       {
         id: 4,
         name: 'Framer Motion',
-        path: '/assets/framer.png',
+        path: '/assets/logos/mysql-logo.svg',
       },
     ],
   },

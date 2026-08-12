@@ -18,12 +18,19 @@ const DemoComputer = (props) => {
   const { nodes, materials } = useGLTF('models/pc-projects.glb');
   
   const txt = useVideoTexture(props.texture || '/textures/project/SGES.mp4');
+  
 
-  // -------------------------------------------------------
-  // Normaliza os UVs da geometria da tela para [0, 1].
-  // Isso elimina o efeito de zoom causado por UVs fora do
-  // intervalo padrão gerados pelo modelo 3D.
-  // -------------------------------------------------------
+  const { screenPos, screenScale } = {
+    screenPos: {
+      value: [10.3, 86.6, -14.5],
+      step: 0.1,
+    },
+    screenScale: {
+      value: [133.2, 115.7, 124.8], 
+      step: 0.1,
+    }
+  };
+
   useEffect(() => {
     const geo = nodes['0']?.geometry;
     if (!geo || !geo.attributes.uv) return;
@@ -51,7 +58,6 @@ const DemoComputer = (props) => {
     uvAttr.needsUpdate = true;
   }, [nodes]);
 
-  // Aplica rotação na textura (necessário pela orientação do modelo)
   useEffect(() => {
     if (!txt) return;
     txt.wrapS = THREE.ClampToEdgeWrapping;
@@ -159,7 +165,7 @@ const DemoComputer = (props) => {
         name='Monitor'
         position={[-0.077, 75.996, -33.893]}
         rotation={[-Math.PI / 2, 0, 0]}
-        scale={100}>
+        scale={120}>
         <mesh
           castShadow
           receiveShadow
@@ -246,10 +252,10 @@ const DemoComputer = (props) => {
         castShadow
         receiveShadow
         geometry={nodes['0'].geometry}
-        position={[10.3, 86.6, -23]}
+        position={[10.3, 90, -20.5]}
         // position={[10.349, 86.658, -31.777]}
         rotation={[-Math.PI / 2, 0, 0]}
-        scale={[111, 96.4, 104]}
+        scale={[133.2, 115.7, 124.8]}
       >
         <meshBasicMaterial map={txt}  />
       </mesh>
