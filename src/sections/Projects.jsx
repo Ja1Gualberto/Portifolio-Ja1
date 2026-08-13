@@ -20,7 +20,7 @@ const Projects = () => {
       
       gsap.to(controlsRef.current.object.position, {
         x:0,
-        y:1,
+        y:0,
         z:5,
         duration: 1.5,
         ease: 'power3.inOut',
@@ -76,19 +76,19 @@ const Projects = () => {
         <p className="head-text">My Work</p>
         
         <div className="grid lg:grid-cols-2 grid-cols-1 mt-12 gap-5 w-full">
-          <div className="flex flex-col gap-5 relative sm:p-10 py-10 px-5 shadow-2xl shadow-black-200 border border-black-300 bg-black-200 rounded-lg">
+          <div className="flex flex-col gap-5 relative sm:p-10 py-10 px-5 shadow-2xl shadow-black-200 border border-black-300 bg-black-200 rounded-lg justify-between">
             <div className="absolute top-0 right-0">
               <img src={projectSelect.spotlight} alt="spotlight" className="w-full h-96 object-cover rounded-xl" />
             </div>
             
             <div className="p-3 backdrop-filter backdrop-blur-3xl w-fit h-fit rounded-lg" style={projectSelect.logoStyle}>
-              <img src={projectSelect.logo} alt="logo" className="w-10 h-10 shadow-sm"/>
+              <img src={projectSelect.logo} alt="logo" className="w-14 h-14 shadow-sm"/>
             </div>
             
             <div className="flex flex-col gap-5 text-white-600 my-5">
-              <p className=" text-white text-2xl font-semibold animetedText">{projectSelect.title}</p>
-              <p className="animetedText">{projectSelect.desc}</p>
-              <p className="animetedText">{projectSelect.subdesc}</p>
+              <p className=" text-white text-2xl font-semibold animatedText">{projectSelect.title}</p>
+              <p className="animatedText">{projectSelect.desc}</p>
+              <p className="animatedText">{projectSelect.subdesc}</p>
             </div>
             
             <div className=" flex items-center justify-between flex-wrap gap-5">
@@ -119,7 +119,7 @@ const Projects = () => {
           </div>
           
           {/* <div className="border  border-black-300 bg-gray-950 rounded-lg h-96 md:h-full"> */}
-          <div className="border  border-black-300 bg-gradient-to-br from-gray-950 to-slate-900 rounded-lg h-96 md:h-full">
+          <div className="border  border-black-300 bg-gradient-to-br from-gray-950 to-slate-900 rounded-lg h-96 md:h-full min-h-0 overflow-hidden">
             
             <Canvas dpr={[1, 2]} gl={{ antialias: true }}>
               <ambientLight intensity={Math.PI}/>

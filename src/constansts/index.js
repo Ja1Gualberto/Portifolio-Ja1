@@ -74,34 +74,37 @@ export const myProjects = [
     tags: [
       {
         id: 1,
-        name: 'React.js',
+        name: 'Laravel',
         path: '/assets/logos/laravel-logo copy.png',
       },
       {
         id: 2,
-        name: 'TailwindCSS',
-        path: 'assets/logos/tailwindcss.png',
+        name: 'BootStrap',
+        path: 'assets/logos/bootstrapLogo.svg',
       },
       {
         id: 3,
-        name: 'TypeScript',
+        name: 'JavaScript',
         path: '/assets/logos/js-logo.svg',
       },
       {
         id: 4,
-        name: 'Framer Motion',
+        name: 'MySQL',
         path: '/assets/logos/mysql-logo.svg',
       },
     ],
   },
   {
-    title: 'LiveDoc - Real-Time Google Docs Clone',
-    desc: 'LiveDoc is a powerful collaborative app that elevates the capabilities of real-time document editing. As an enhanced version of Google Docs, It supports millions of collaborators simultaneously, ensuring that every change is captured instantly and accurately.',
+    title: 'Planifica - Academic scheduling management system',
+    desc: 'PlanIFica is a web system for managing and automatically generating academic schedules developed for IFRO Campus Calama. It was born as an academic initiative within the Calama Devs project, led by Prof. Leandro Ferrarezi, with the objective of solving a real bottleneck for DEPAE (Department of Student Assistance): the manual and laborious creation of course schedules.',
+    pt_desc: 'PlanIFica é um sistema web de gestão e geração automatizada de horários acadêmicos desenvolvido para o IFRO Campus Calama. Nasceu como uma iniciativa acadêmica dentro do projeto Calama Devs, liderado pelo Prof. Leandro Ferrarezi, com o objetivo de solucionar um gargalo real do DEPAE (Departamento de Assistência ao Educando): a criação manual e trabalhosa das grades de horário dos cursos.',
     subdesc:
-      'With LiveDoc, users can experience the future of collaboration, where multiple contributors work together in real time without any lag, by using Next.js and Liveblocks newest features.',
+      `The system allows the registration of classes, teachers, subjects, environments, and courses, and features an automatic schedule generation engine based on a multi-start constructive heuristic — an algorithm that, from configurable rules, automatically generates schedule proposals respecting teacher impediments, class conflicts, and room availability.\n\nDeveloped with CodeIgniter 4, TailwindCSS, MySQL, and JavaScript.`,
+    pt_subdesc: `O sistema permite o cadastro de turmas, professores, disciplinas, ambientes e cursos, e conta com um motor de geração automática de horários baseado em uma heurística construtiva multi-start — um algoritmo que, a partir de regras configuráveis, gera automaticamente propostas de grade respeitando impedimentos de professores, conflitos de turma e disponibilidade de salas.\n\nDesenvolvido com CodeIgniter 4, TailwindCSS, MySQL e JavaScript.`,
     href: 'https://www.youtube.com/watch?v=y5vE8y_f_OM',
-    texture: '/textures/project/project2.mp4',
-    logo: '/assets/logos/project-logo2.png',
+    texture: '/textures/project/Planifica.mp4',
+    logo: '/assets/logos/LogoIfroWhite.svg', 
+    // logo: '/assets/logos/LogoIfro.svg', 
     logoStyle: {
       backgroundColor: '#13202F',
       border: '0.2px solid #17293E',
@@ -111,8 +114,8 @@ export const myProjects = [
     tags: [
       {
         id: 1,
-        name: 'React.js',
-        path: '/assets/react.svg',
+        name: 'CodeIgniter',
+        path: '/assets/logos/CodeIgniter.svg',
       },
       {
         id: 2,
@@ -121,129 +124,129 @@ export const myProjects = [
       },
       {
         id: 3,
-        name: 'TypeScript',
-        path: '/assets/logos/typescript.png',
+        name: 'MySQL',
+        path: '/assets/logos/js-logo.svg',
       },
       {
         id: 4,
-        name: 'Framer Motion',
-        path: '/assets/framer.png',
+        name: 'JavaScript',
+        path: '/assets/logos/mysql-logo.svg',
       },
     ],
   },
-  {
-    title: 'CarePulse - Health Management System',
-    desc: 'An innovative healthcare platform designed to streamline essential medical processes. It simplifies patient registration, appointment scheduling, and medical record management, providing a seamless experience for both healthcare providers and patients.',
-    subdesc:
-      'With a focus on efficiency, CarePulse integrantes complex forms and SMS notifications, by using Next.js, Appwrite, Twillio and Sentry that enhance operational workflows.',
-    href: 'https://www.youtube.com/watch?v=lEflo_sc82g',
-    texture: '/textures/project/project3.mp4',
-    logo: '/assets/logos/project-logo3.png',
-    logoStyle: {
-      backgroundColor: '#60f5a1',
-      background:
-        'linear-gradient(0deg, #60F5A150, #60F5A150), linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(208, 213, 221, 0.8) 100%)',
-      border: '0.2px solid rgba(208, 213, 221, 1)',
-      boxShadow: '0px 0px 60px 0px rgba(35, 131, 96, 0.3)',
-    },
-    spotlight: '/assets/spotlight3.png',
-    tags: [
-      {
-        id: 1,
-        name: 'React.js',
-        path: '/assets/react.svg',
-      },
-      {
-        id: 2,
-        name: 'TailwindCSS',
-        path: 'assets/logos/tailwindcss.png',
-      },
-      {
-        id: 3,
-        name: 'TypeScript',
-        path: '/assets/logos/typescript.png',
-      },
-      {
-        id: 4,
-        name: 'Framer Motion',
-        path: '/assets/framer.png',
-      },
-    ],
-  },
-  {
-    title: 'Horizon - Online Banking Platform',
-    desc: 'Horizon is a comprehensive online banking platform that offers users a centralized finance management dashboard. It allows users to connect multiple bank accounts, monitor real-time transactions, and seamlessly transfer money to other users.',
-    subdesc:
-      'Built with Next.js 14 Appwrite, Dwolla and Plaid, Horizon ensures a smooth and secure banking experience, tailored to meet the needs of modern consumers.',
-    href: 'https://www.youtube.com/watch?v=PuOVqP_cjkE',
-    texture: '/textures/project/project4.mp4',
-    logo: '/assets/logos/project-logo4.png',
-    logoStyle: {
-      backgroundColor: '#0E1F38',
-      border: '0.2px solid #0E2D58',
-      boxShadow: '0px 0px 60px 0px #2F67B64D',
-    },
-    spotlight: '/assets/spotlight4.png',
-    tags: [
-      {
-        id: 1,
-        name: 'React.js',
-        path: '/assets/react.svg',
-      },
-      {
-        id: 2,
-        name: 'TailwindCSS',
-        path: 'assets/logos/tailwindcss.png',
-      },
-      {
-        id: 3,
-        name: 'TypeScript',
-        path: '/assets/logos/typescript.png',
-      },
-      {
-        id: 4,
-        name: 'Framer Motion',
-        path: '/assets/framer.png',
-      },
-    ],
-  },
-  {
-    title: 'Imaginify - AI Photo Manipulation App',
-    desc: 'Imaginify is a groundbreaking Software-as-a-Service application that empowers users to create stunning photo manipulations using AI technology. With features like AI-driven image editing, a payments system, and a credits-based model.',
-    subdesc:
-      'Built with Next.js 14, Cloudinary AI, Clerk, and Stripe, Imaginify combines cutting-edge technology with a user-centric approach. It can be turned into a side income or even a full-fledged business.',
-    href: 'https://www.youtube.com/watch?v=Ahwoks_dawU',
-    texture: '/textures/project/project5.mp4',
-    logo: '/assets/logos/project-logo5.png',
-    logoStyle: {
-      backgroundColor: '#1C1A43',
-      border: '0.2px solid #252262',
-      boxShadow: '0px 0px 60px 0px #635BFF4D',
-    },
-    spotlight: '/assets/spotlight5.png',
-    tags: [
-      {
-        id: 1,
-        name: 'React.js',
-        path: '/assets/react.svg',
-      },
-      {
-        id: 2,
-        name: 'TailwindCSS',
-        path: 'assets/logos/tailwindcss.png',
-      },
-      {
-        id: 3,
-        name: 'TypeScript',
-        path: '/assets/logos/typescript.png',
-      },
-      {
-        id: 4,
-        name: 'Framer Motion',
-        path: '/assets/framer.png',
-      },
-    ],
-  },
+  // {
+  //   title: 'CarePulse - Health Management System',
+  //   desc: 'An innovative healthcare platform designed to streamline essential medical processes. It simplifies patient registration, appointment scheduling, and medical record management, providing a seamless experience for both healthcare providers and patients.',
+  //   subdesc:
+  //     'With a focus on efficiency, CarePulse integrantes complex forms and SMS notifications, by using Next.js, Appwrite, Twillio and Sentry that enhance operational workflows.',
+  //   href: 'https://www.youtube.com/watch?v=lEflo_sc82g',
+  //   texture: '/textures/project/project3.mp4',
+  //   logo: '/assets/logos/project-logo3.png',
+  //   logoStyle: {
+  //     backgroundColor: '#60f5a1',
+  //     background:
+  //       'linear-gradient(0deg, #60F5A150, #60F5A150), linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(208, 213, 221, 0.8) 100%)',
+  //     border: '0.2px solid rgba(208, 213, 221, 1)',
+  //     boxShadow: '0px 0px 60px 0px rgba(35, 131, 96, 0.3)',
+  //   },
+  //   spotlight: '/assets/spotlight3.png',
+  //   tags: [
+  //     {
+  //       id: 1,
+  //       name: 'React.js',
+  //       path: '/assets/react.svg',
+  //     },
+  //     {
+  //       id: 2,
+  //       name: 'TailwindCSS',
+  //       path: 'assets/logos/tailwindcss.png',
+  //     },
+  //     {
+  //       id: 3,
+  //       name: 'TypeScript',
+  //       path: '/assets/logos/typescript.png',
+  //     },
+  //     {
+  //       id: 4,
+  //       name: 'Framer Motion',
+  //       path: '/assets/framer.png',
+  //     },
+  //   ],
+  // },
+  // {
+  //   title: 'Horizon - Online Banking Platform',
+  //   desc: 'Horizon is a comprehensive online banking platform that offers users a centralized finance management dashboard. It allows users to connect multiple bank accounts, monitor real-time transactions, and seamlessly transfer money to other users.',
+  //   subdesc:
+  //     'Built with Next.js 14 Appwrite, Dwolla and Plaid, Horizon ensures a smooth and secure banking experience, tailored to meet the needs of modern consumers.',
+  //   href: 'https://www.youtube.com/watch?v=PuOVqP_cjkE',
+  //   texture: '/textures/project/project4.mp4',
+  //   logo: '/assets/logos/project-logo4.png',
+  //   logoStyle: {
+  //     backgroundColor: '#0E1F38',
+  //     border: '0.2px solid #0E2D58',
+  //     boxShadow: '0px 0px 60px 0px #2F67B64D',
+  //   },
+  //   spotlight: '/assets/spotlight4.png',
+  //   tags: [
+  //     {
+  //       id: 1,
+  //       name: 'React.js',
+  //       path: '/assets/react.svg',
+  //     },
+  //     {
+  //       id: 2,
+  //       name: 'TailwindCSS',
+  //       path: 'assets/logos/tailwindcss.png',
+  //     },
+  //     {
+  //       id: 3,
+  //       name: 'TypeScript',
+  //       path: '/assets/logos/typescript.png',
+  //     },
+  //     {
+  //       id: 4,
+  //       name: 'Framer Motion',
+  //       path: '/assets/framer.png',
+  //     },
+  //   ],
+  // },
+  // {
+  //   title: 'Imaginify - AI Photo Manipulation App',
+  //   desc: 'Imaginify is a groundbreaking Software-as-a-Service application that empowers users to create stunning photo manipulations using AI technology. With features like AI-driven image editing, a payments system, and a credits-based model.',
+  //   subdesc:
+  //     'Built with Next.js 14, Cloudinary AI, Clerk, and Stripe, Imaginify combines cutting-edge technology with a user-centric approach. It can be turned into a side income or even a full-fledged business.',
+  //   href: 'https://www.youtube.com/watch?v=Ahwoks_dawU',
+  //   texture: '/textures/project/project5.mp4',
+  //   logo: '/assets/logos/project-logo5.png',
+  //   logoStyle: {
+  //     backgroundColor: '#1C1A43',
+  //     border: '0.2px solid #252262',
+  //     boxShadow: '0px 0px 60px 0px #635BFF4D',
+  //   },
+  //   spotlight: '/assets/spotlight5.png',
+  //   tags: [
+  //     {
+  //       id: 1,
+  //       name: 'React.js',
+  //       path: '/assets/react.svg',
+  //     },
+  //     {
+  //       id: 2,
+  //       name: 'TailwindCSS',
+  //       path: 'assets/logos/tailwindcss.png',
+  //     },
+  //     {
+  //       id: 3,
+  //       name: 'TypeScript',
+  //       path: '/assets/logos/typescript.png',
+  //     },
+  //     {
+  //       id: 4,
+  //       name: 'Framer Motion',
+  //       path: '/assets/framer.png',
+  //     },
+  //   ],
+  // },
 ];
 
 export const calculateSizes = (isSmall, isMobile, isTablet) => {
