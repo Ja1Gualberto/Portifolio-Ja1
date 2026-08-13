@@ -10,8 +10,49 @@ import gsap from "gsap";
 
 const Projects = () => {
   
+  const cardRef = useRef(null);
   const controlsRef = useRef();
   const timerRef = useRef(null);
+  
+  function skipCard(direction) {
+    // const distancia = direction === 'next' ? 300 : -300;
+    const distancia = direction === 'next' ? 75 : -75;
+    const inclinacao = direction === 'next' ? 5 : -5;
+    
+    gsap.to(cardRef.current, {
+      x: distancia,
+      rotation: inclinacao,
+      scale: 0.75,
+      opacity: 0,
+      filter: 'brightness(0.3)',
+      duration: 0.4,
+      ease: 'power2.in',
+      
+      onComplete: () => {
+        
+        navBtn(direction);
+        
+        gsap.fromTo(cardRef.current, 
+          {
+            x: -distancia,
+            rotation: -inclinacao,
+            scale: 0.75,
+            opacity: 0, 
+            filter: 'brightness(0.3)'
+          },
+          {
+            x: 0,
+            rotation: 0,
+            scale: 1,
+            opacity: 1,
+            filter: 'brightness(1)',
+            duration: 0.6,
+            ease: 'circ.out(1.2)'
+          }
+        )
+      }
+    });
+  }
   
   const resetCamera = () => {
     if (controlsRef.current) {
@@ -39,8 +80,6 @@ const Projects = () => {
         duration: 1.5,
         ease: "power3.inOut",
       });
-
-      // controlsRef.current.reset();
     }
   };
   
@@ -76,7 +115,7 @@ const Projects = () => {
         <p className="head-text">My Work</p>
         
         <div className="grid lg:grid-cols-2 grid-cols-1 mt-12 gap-5 w-full">
-          <div className="flex flex-col gap-5 relative sm:p-10 py-10 px-5 shadow-2xl shadow-black-200 border border-black-300 bg-black-200 rounded-lg justify-between">
+          <div className="flex flex-col gap-5 relative sm:p-10 py-10 px-5 shadow-2xl shadow-black-200 border border-black-300 bg-black-200 rounded-lg justify-between sm:min-h-[650px] min-h-[750px]" ref={cardRef}>
             <div className="absolute top-0 right-0">
               <img src={projectSelect.spotlight} alt="spotlight" className="w-full h-96 object-cover rounded-xl" />
             </div>
@@ -108,11 +147,11 @@ const Projects = () => {
             </div>
             
             <div className="flex justify-between items-center mt-7">
-              <button className="arrow-btn" onClick={() => navBtn('previous')}>
+              <button className="arrow-btn" onClick={() => skipCard('previous')}>
                 <img src="/assets/left-arrow.png" alt="left arrow" />
               </button>
 
-              <button className="arrow-btn" onClick={() => navBtn('next')}>
+              <button className="arrow-btn" onClick={() => skipCard('next')}>
                 <img src="/assets/right-arrow.png" alt="right arrow" className="w-4 h-4" />
               </button>
             </div>
