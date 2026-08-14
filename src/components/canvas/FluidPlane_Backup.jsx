@@ -1,7 +1,7 @@
 import { useFrame, useThree } from "@react-three/fiber";
 import { useMemo, useRef } from "react";
-import vertexShader from "./shaders/vertexShaders";
-import fragmentShader from "./shaders/fragmentShader";
+import vertexShader from "./shaders/vertexShaders_Fluid";
+import fragmentShader from "./shaders/fragmentShader_Fluid";
 import { useControls } from "leva";
 import * as THREE from 'three'
 

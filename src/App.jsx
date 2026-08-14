@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import { createPortal } from "react-dom";
 import Navbar from "./sections/Navbar";
 import Hero from "./sections/Hero";
 import AboutMe from "./sections/AboutMe";
@@ -8,12 +9,13 @@ import Contact from "./sections/Contact";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import BackGroundCanvas from "./components/canvas/BackGroundCanvas";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const App = () => {
   const mainRef = useRef(null);
-
+  
   useGSAP(() => {
     const sections = gsap.utils.toArray("section");
 
@@ -40,6 +42,9 @@ const App = () => {
   }, { scope: mainRef });
 
   return (
+    <>
+    {createPortal(<BackGroundCanvas/>, document.body)}
+    
     <main ref={mainRef} className="max-w-7xl mx-auto">
       <Navbar/>
       <Hero />
@@ -48,6 +53,7 @@ const App = () => {
       {/* <Clients/> */}
       <Contact/>
     </main>
+    </>
   )
 }
 export default App;
