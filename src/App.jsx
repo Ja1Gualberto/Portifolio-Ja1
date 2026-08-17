@@ -9,6 +9,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import BackGroundCanvas from "./components/canvas/BackGroundCanvas";
+import Footer from "./sections/Footer";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -51,6 +52,7 @@ const App = () => {
       <Projects/>
       {/* <Clients/> */}
       <Contact/>
+      <Footer/>
     </main>
     </>
   )
