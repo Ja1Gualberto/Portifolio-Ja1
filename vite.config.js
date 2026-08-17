@@ -16,4 +16,14 @@ export default defineConfig({
   server: {
     port: 8000,
   },
+  worker: {
+    format: 'es',
+  },
+  build: {
+    rollupOptions: {
+      external: [
+        /satellite\.js\/wasm-build\/pthreads-release/,
+      ],
+    },
+  },
 })
