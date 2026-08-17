@@ -1,5 +1,4 @@
 import React, { useRef } from "react";
-import { createPortal } from "react-dom";
 import Navbar from "./sections/Navbar";
 import Hero from "./sections/Hero";
 import AboutMe from "./sections/AboutMe";
@@ -43,9 +42,9 @@ const App = () => {
 
   return (
     <>
-    {createPortal(<BackGroundCanvas/>, document.body)}
-    
-    <main ref={mainRef} className="max-w-7xl mx-auto">
+      <BackGroundCanvas />
+      
+      <main ref={mainRef} className="max-w-7xl mx-auto">
       <Navbar/>
       <Hero />
       <AboutMe/>

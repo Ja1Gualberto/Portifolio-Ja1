@@ -31,7 +31,7 @@ const Navbar = () => {
           
           <nav className="sm:flex hidden items-center">
             <NavItems/>
-            <Switch/>
+            {/* <Switch/> */}
           </nav>
         </div>
       </div>
