@@ -8,7 +8,7 @@ import { useRef, useState } from 'react';
 import { Float, useGLTF, useTexture } from '@react-three/drei';
 
 const Cubo = ({ ...props }) => {
-  const { nodes } = useGLTF('models/cube.glb');
+  const { nodes } = useGLTF('/models/cube.glb');
 
   const texture = useTexture('textures/cube.png');
 
@@ -48,6 +48,6 @@ const Cubo = ({ ...props }) => {
   );
 };
 
-useGLTF.preload('models/cube.glb');
+useGLTF.preload('/models/cube.glb');
 
 export default Cubo;

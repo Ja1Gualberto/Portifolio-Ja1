@@ -11,7 +11,7 @@ import { Float, useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 
 const ReactLogo = (props) => {
-  const { nodes, materials } = useGLTF('/public/models/react.glb')
+  const { nodes, materials } = useGLTF('/models/react.glb')
   const meshRef = useRef()
 
   useFrame((_, delta) => {
@@ -39,6 +39,6 @@ const ReactLogo = (props) => {
   )
 }
 
-useGLTF.preload('/public/models/react.glb')
+useGLTF.preload('/models/react.glb')
 
 export default ReactLogo;
