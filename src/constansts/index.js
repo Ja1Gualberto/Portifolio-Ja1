@@ -293,7 +293,7 @@ export const workExperiences = [
     pos: 'Accounting Assistant',
     duration: '02/2024 - 09/2025',
     title: "Assisted with the accounting and tax closing for client companies, managed file organization, and provided IT support, including basic system maintenance, technical troubleshooting, and end-user support.",
-    icon: '/assets/logos/metaContabilidadeLogo.jpg',
+    icon: '/assets/logos/metaLogo.jpeg',
     animation: 'salute',
   },
 ];
