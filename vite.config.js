@@ -5,7 +5,6 @@ import { fileURLToPath } from 'url'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
   resolve: {
@@ -20,10 +19,20 @@ export default defineConfig({
     format: 'es',
   },
   build: {
-    rollupOptions: {
-      external: [
-        /satellite\.js\/wasm-build\/pthreads-release/,
-      ],
+  rollupOptions: {
+    external: [
+      /satellite\.js\/wasm-build\/pthreads-release/,
+    ],
+    output: {
+      manualChunks(id) {
+        if (id.includes('node_modules')) {
+          if (id.includes('three') || id.includes('@react-three')) return 'three-vendor';
+          if (id.includes('gsap'))                                  return 'gsap-vendor';
+          if (id.includes('react-globe'))                           return 'globe-vendor';
+          if (id.includes('react-dom') || id.includes('/react/'))   return 'react-vendor';
+        }
+      },
     },
   },
+},
 })

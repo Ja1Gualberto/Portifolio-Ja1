@@ -13,7 +13,7 @@ import gsap from 'gsap';
 
 const Target = (props) => {
   const targetRef = useRef();
-  const { nodes, materials } = useGLTF('/public/models/target.glb');
+  const { nodes, materials } = useGLTF('/public/models/target-otimizado.glb');
   
   useGSAP( () => {
     gsap.to(targetRef.current.position, {
@@ -51,5 +51,5 @@ const Target = (props) => {
   )
 }
 
-useGLTF.preload('/public/models/target.glb');
+useGLTF.preload('/public/models/target-otimizado.glb');
 export default Target;

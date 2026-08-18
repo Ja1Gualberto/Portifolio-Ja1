@@ -4,7 +4,6 @@ import { Canvas } from "@react-three/fiber";
 import { Center, OrbitControls } from "@react-three/drei";
 import CanvasLoader from "../components/CanvasLoader";
 import DemoComputer from "../components/DemoComputer";
-import { Leva, useControls } from "leva";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
@@ -160,7 +159,7 @@ const Projects = () => {
           {/* <div className="border  border-black-300 bg-gray-950 rounded-lg h-96 md:h-full"> */}
           <div className="border  border-black-300 bg-gradient-to-br from-gray-950 to-slate-900 rounded-lg h-96 md:h-full min-h-0 overflow-hidden">
             
-            <Canvas dpr={[1, 2]} gl={{ antialias: true }}>
+            <Canvas dpr={[1, 1.5]} gl={{ antialias: true }}>
               <ambientLight intensity={Math.PI}/>
               <directionalLight position={[10,10,5]}/>
                 

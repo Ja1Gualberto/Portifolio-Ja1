@@ -11,25 +11,12 @@ import { useGLTF, useVideoTexture } from '@react-three/drei'
 import * as THREE from 'three'
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
-import { useControls } from 'leva';
 
 const DemoComputer = (props) => {
   const group = useRef();
-  const { nodes, materials } = useGLTF('models/pc-projects.glb');
+  const { nodes, materials } = useGLTF('models/pc-projects-otimizado.glb');
   
   const txt = useVideoTexture(props.texture || '/textures/project/SGES.mp4');
-  
-
-  const { screenPos, screenScale } = {
-    screenPos: {
-      value: [10.3, 86.6, -14.5],
-      step: 0.1,
-    },
-    screenScale: {
-      value: [133.2, 115.7, 124.8], 
-      step: 0.1,
-    }
-  };
 
   useEffect(() => {
     const geo = nodes['0']?.geometry;
@@ -84,192 +71,89 @@ const DemoComputer = (props) => {
   
   return (
     <group ref={group} {...props} dispose={null}>
-      <group
-        name='Pc-disquete1'
-        position={[35.38, 21.57, -6.869]}
-        rotation={[-Math.PI / 2, 0, 0]}
-        scale={[100, 100, 98]}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes['FD1_���������������007_0'].geometry}
-          material={materials['.007']}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes['FD1_���������������006_0'].geometry}
-          material={materials['.006']}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes['FD1_���������������005_0'].geometry}
-          material={materials['.005']}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes['FD1_���������������004_0'].geometry}
-          material={materials['.004']}
-        />
-      </group>
-      <group
-        name='Pc-disquete2'
-        position={[35.38, 15.236, -6.869]}
-        rotation={[-Math.PI / 2, 0, 0]}
-        scale={[100, 100, 98]}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes['FD2_���������������007_0'].geometry}
-          material={materials['.007']}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes['FD2_���������������006_0'].geometry}
-          material={materials['.006']}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes['FD2_���������������005_0'].geometry}
-          material={materials['.005']}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes['FD2_���������������004_0'].geometry}
-          material={materials['.004']}
-        />
-      </group>
+      {nodes['FD1_007_0'] && (
+        <group
+          name='Pc-disquete1'
+          position={[35.38, 21.57, -6.869]}
+          rotation={[-Math.PI / 2, 0, 0]}
+          scale={[100, 100, 98]}>
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes['FD1_007_0'].geometry}
+            material={materials.PaletteMaterial001 || materials['.007']}
+          />
+          {nodes['FD1_006_0'] && (
+            <mesh
+              castShadow
+              receiveShadow
+              geometry={nodes['FD1_006_0'].geometry}
+              material={materials.PaletteMaterial002 || materials['.006']}
+            />
+          )}
+        </group>
+      )}
       <group
         name='CPU'
         rotation={[-Math.PI / 2, 0, 0]}
         scale={100}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes['2'].geometry}
-          material={materials['Lamp.001']}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes['1'].geometry}
-          material={materials['PC9801UX.001']}
-        />
+        {nodes['2'] && (
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes['2'].geometry}
+            material={materials.PaletteMaterial003 || materials['Lamp.001']}
+          />
+        )}
+        {nodes['1'] && (
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes['1'].geometry}
+            material={materials['PC9801UX.001']}
+          />
+        )}
       </group>
       <group 
         name='Monitor'
         position={[-0.077, 75.996, -33.893]}
         rotation={[-Math.PI / 2, 0, 0]}
         scale={120}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.PCKD854n_PCKD854n001_0.geometry}
-          material={materials['PCKD854n.001']}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.PCKD854n_Lamp001_0.geometry}
-          material={materials['Lamp.001']}
-        />
+        {nodes.PCKD854n_PCKD854n001_0 && (
+          <mesh
+            castShadow
+            receiveShadow
+            geometry={nodes.PCKD854n_PCKD854n001_0.geometry}
+            material={materials['PCKD854n.001']}
+          />
+        )}
       </group>
-      <group
-        name='Disquete-Mesa1'
-        position={[85.791, 0, 48.96]}
-        rotation={[-Math.PI / 2, 0, -0.436]}
-        scale={[100, 100, 98]}>
+      {nodes.cable_PC9801U001_0 && (
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes['FD3_���������������007_0'].geometry}
-          material={materials['.007']}
+          geometry={nodes.cable_PC9801U001_0.geometry}
+          material={materials['PC9801U.001']}
+          position={[96.526, 0, 0]}
+          rotation={[-Math.PI / 2, 0, 0]}
+          scale={11.269}
         />
+      )}
+      {nodes['0'] && (
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes['FD3_���������������006_0'].geometry}
-          material={materials['.006']}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes['FD3_���������������005_0'].geometry}
-          material={materials['.005']}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes['FD3_���������������004_0'].geometry}
-          material={materials['.004']}
-        />
-      </group>
-      {/* <group
-        name='Disquete-Mesa2'
-        position={[108.829, 0, 72.691]}
-        rotation={[Math.PI / 2, 0, -3.054]}
-        scale={[100, 100, 98]}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes['FD4_���������������007_0'].geometry}
-          material={materials['.007']}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes['FD4_���������������006_0'].geometry}
-          material={materials['.006']}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes['FD4_���������������005_0'].geometry}
-          material={materials['.005']}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes['FD4_���������������004_0'].geometry}
-          material={materials['.004']}
-        />
-      </group> */}
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.cable_PC9801U001_0.geometry}
-        material={materials['PC9801U.001']}
-        position={[96.526, 0, 0]}
-        rotation={[-Math.PI / 2, 0, 0]}
-        scale={11.269}
-      />
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes['0'].geometry}
-        position={[10.3, 90, -20.5]}
-        // position={[10.349, 86.658, -31.777]}
-        rotation={[-Math.PI / 2, 0, 0]}
-        scale={[133.2, 115.7, 124.8]}
-      >
-        <meshBasicMaterial map={txt}  />
-      </mesh>
-      <mesh
-        castShadow
-        receiveShadow
-        geometry={nodes.PC9801U_PC9801U001_0.geometry}
-        material={materials['PC9801U.001']}
-        rotation={[-Math.PI / 2, 0, 0]}
-        scale={100}
-      />
+          geometry={nodes['0'].geometry}
+          position={[10.3, 90, -20.5]}
+          rotation={[-Math.PI / 2, 0, 0]}
+          scale={[133.2, 115.7, 124.8]}
+        >
+          <meshBasicMaterial map={txt} />
+        </mesh>
+      )}
     </group>
   )
 }
 
-useGLTF.preload('models/pc-projects.glb')
+useGLTF.preload('models/pc-projects-otimizado.glb')
 export default DemoComputer;
