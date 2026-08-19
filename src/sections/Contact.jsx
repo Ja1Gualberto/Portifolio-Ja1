@@ -51,10 +51,10 @@ const Contact = () => {
   return(
     <section className="c-space my-20" id="contact">
       
-      <div className="relative min-h-screen flex items-center justify-center flex-col">
-        <img src="/assets/terminal.png" alt="terminalbg" className="absolute inset-0 min-h-screen" />
+      <div className="relative min-h-screen flex items-center justify-center flex-col" style={{overflowX: 'hidden'}}>
+        <img src="/assets/terminal.png" alt="terminalbg" className="absolute inset-0 w-full min-h-full" style={{objectFit: 'fill'}} />
         
-        <div className="contact-container">
+        <div className="relative z-10 mt-12" style={{width: '100%', maxWidth: '36rem', boxSizing: 'border-box', padding: '0 1.25rem'}}>
           
           <h3 className="head-text">Let's talk</h3>
           <p className="text-lg text-white-600 mt-3">Whether you're looking build a new website, improve your existing platform, or bring a unique project to life, I'm here to help</p>
