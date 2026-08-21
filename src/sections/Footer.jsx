@@ -13,7 +13,7 @@ const Footer = () => {
             <img src="/assets/github.svg" alt="github" className="w-1/2 h-1/2" />
           </div>
         </a>
-        <a href="www.linkedin.com/in/jaogualberto">
+        <a href="https://www.linkedin.com/in/jaogualberto" target="_blank" rel="noopener noreferrer">
           <div className="social-icon">
             <img src="/assets/logos/linkedinwIcon.svg" alt="linkedin" className="w-1/2 h-1/2" />
           </div>
